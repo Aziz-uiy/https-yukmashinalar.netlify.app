@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YukMashinalar.uz — Yuk mashinalari bozori</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">🚛 YukMashinalar.uz</h1>
+      <form id="search">
+        <input type="text" id="q" placeholder="Masalan: MAN TGX, DAF XF..." />
+        <button type="submit">Qidirish</button>
+      </form>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>So‘nggi e’lonlar</h2>
+    <section id="listings" class="grid"></section>
+  </main>
+
+  <footer>
+    <p>© 2025 YukMashinalar.uz — Sinov loyihasi</p>
+  </footer>
+
+  <template id="card-tpl">
+    <article class="card">
+      <img src="" alt="Yuk mashinasi" />
+      <div class="card-body">
+        <h3 class="title"></h3>
+        <p class="price"></p>
+        <p class="meta"></p>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

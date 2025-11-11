@@ -1,0 +1,31 @@
+const listings = [
+    { title: "MAN TGX 18.440 (2016)", price: "$23,500", img: "https://via.placeholder.com/400x250?text=MAN+TGX", meta: "450,000 km · Toshkent" },
+    { title: "DAF XF 105.460 (2015)", price: "$21,900", img: "https://via.placeholder.com/400x250?text=DAF+XF", meta: "500,000 km · Namangan" },
+    { title: "Mercedes-Benz Actros (2017)", price: "$27,000", img: "https://via.placeholder.com/400x250?text=Actros", meta: "380,000 km · Samarqand" },
+    { title: "Scania R500 (2014)", price: "$19,800", img: "https://via.placeholder.com/400x250?text=Scania+R500", meta: "600,000 km · Andijon" }
+  ];
+  
+  const tpl = document.getElementById("card-tpl");
+  const container = document.getElementById("listings");
+  
+  function render(data) {
+    container.innerHTML = "";
+    for (const item of data) {
+      const node = tpl.content.cloneNode(true);
+      node.querySelector("img").src = item.img;
+      node.querySelector(".title").textContent = item.title;
+      node.querySelector(".price").textContent = item.price;
+      node.querySelector(".meta").textContent = item.meta;
+      container.appendChild(node);
+    }
+  }
+  
+  render(listings);
+  
+  document.getElementById("search").addEventListener("submit", e => {
+    e.preventDefault();
+    const q = document.getElementById("q").value.toLowerCase();
+    const filtered = listings.filter(x => x.title.toLowerCase().includes(q));
+    render(filtered);
+  });
+  
